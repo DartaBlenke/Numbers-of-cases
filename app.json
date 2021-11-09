@@ -1,0 +1,12 @@
+{
+  "name": "D3_code_challenge",
+  "displayName": "D3_code_challenge",
+  "expo": {
+    "name": "D3_code_challenge",
+    "slug": "D3_code_challenge",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
