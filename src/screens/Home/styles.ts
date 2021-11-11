@@ -23,6 +23,36 @@ export const Title = styled.Text `
     color: ${({ theme }) => theme.colors.purple};
 `;
 
+export const Body = styled.View`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    justify-Content: center;
+    align-Items: center;
+`;
+
+export const Days_scores = styled.View`
+    background-color: ${({ theme }) => theme.colors.black};
+    width: 260px;
+    height: 290px;
+    border-radius: 7px;
+    justify-Content: center; 
+    align-Items: center;
+    margin-top: ${RFPercentage(8)}px;
+`;
+
+export const Quantity_days = styled.View`
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.purple};
+    justify-Content: center; 
+    align-Items: center;
+    width: 110px;
+    height: 90px;
+    border-radius: 7px;
+    margin-top: ${RFPercentage(5)}px;
+`;
+
 export const Footer = styled.View`
     width: 100%;
     display: flex;

@@ -13,7 +13,7 @@ export const Container = styled.View`
   border-radius: 7px;
   align-items: center;
   justify-content: center;
-  margin-top: ${RFPercentage(88)}px;
+  margin-top: ${RFPercentage(85)}px;
 `;
 
 export const Icon = styled(Feather)<IconProps>`
