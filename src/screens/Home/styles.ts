@@ -42,6 +42,12 @@ export const Days_scores = styled.View`
     margin-top: ${RFPercentage(8)}px;
 `;
 
+export const Days = styled.Text`
+    color: ${({ theme }) => theme.colors.purple};
+    font-size: 40px;
+    font-weight: bold;
+`;
+
 export const Quantity_days = styled.View`
     background-color: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.purple};
