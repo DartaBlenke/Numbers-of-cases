@@ -8,12 +8,11 @@ interface IconProps {
 
 export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.black};
-  width: 150px;
-  height: 60px;
+  width: ${RFPercentage(20)}px;
+  height: ${RFPercentage(8)}px;
   border-radius: 7px;
   align-items: center;
   justify-content: center;
-  margin-top: ${RFPercentage(85)}px;
 `;
 
 export const Icon = styled(Feather)<IconProps>`
@@ -31,5 +30,4 @@ export const Icon = styled(Feather)<IconProps>`
 
 export const Content = styled.Text`
   color: ${({ theme }) => theme.colors.gray};
-
 `;
