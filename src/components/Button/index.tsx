@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonProps, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 import { 
   Container, 
@@ -7,9 +7,10 @@ import {
   Icon,
 } from './styles';
 
-interface Props extends ButtonProps {
+interface ButtonProps {
   text: string;
   way: 'up' | 'down';
+  onPress: () => void;
 }
 
 const icon = {
@@ -17,12 +18,14 @@ const icon = {
   down: 'arrow-down'
 }
 
-export function Button({ text, way, ...rest } : Props) {
+export function Button({ text, way, onPress } : ButtonProps) {
   return(
     <TouchableOpacity
     activeOpacity={0.7}
+    onPress={onPress}
     >
-      <Container>
+      <Container
+      >
         <Icon name={icon[way]} type={way}/>
         <Content>{text}</Content>
       </Container>

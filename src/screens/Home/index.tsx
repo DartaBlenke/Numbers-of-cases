@@ -16,8 +16,10 @@ export function Home(){
   
   const [day, setDay] = useState(0);
 
-  function OneMoreDay(){
-    setDay((oldState) => oldState + 1)
+  function OneLessDay(){
+    if (day == 0) {
+      return;
+    } setDay(day -1)
   }
 
   return(
@@ -36,14 +38,12 @@ export function Home(){
         <Button 
           text="- 1 dia"
           way="down"
-          onPress={() => {setDay(day - 1)}}
-          title={'1 less day'}
+          onPress={OneLessDay}
         />
         <Button 
           text="+ 1 dia"
           way="up"
-          onClick={OneMoreDay}
-          title={'1 more day'}
+          onPress={() => setDay( day + 1 )}
         />
       </Footer>
     </Screen>
