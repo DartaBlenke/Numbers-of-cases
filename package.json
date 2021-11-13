@@ -5,9 +5,11 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "api" : "json-server ./src/services/server.json --host 192.168.0.30 --port 3333 --delay 600"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "expo": "~41.0.1",
     "expo-splash-screen": "~0.10.2",
     "expo-updates": "~0.5.4",

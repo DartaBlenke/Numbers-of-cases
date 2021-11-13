@@ -28,7 +28,15 @@ export const Days_scores = styled.View`
     width: ${RFPercentage(33)}px;
     height: ${RFPercentage(35)}px;
     margin-top: ${RFPercentage(5)}px;
-    border-radius: 7px;
+    border-radius: 7px;    
+    justify-Content: center;
+    align-Items: center;
+`;
+
+export const Cases_number = styled.Text`
+    color: ${({ theme }) => theme.colors.gray};
+    font-size: 30px;
+    font-weight: bold;
 `;
 
 export const Days = styled.Text`

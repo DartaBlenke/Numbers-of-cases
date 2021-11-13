@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Button } from '../../components/Button';
+import { api } from '../../services/api';
+import { CasesDto } from '../../dtos/CasesDTO';
 
 import { 
   Screen,
@@ -10,11 +12,14 @@ import {
   Quantity_days,
   Days,
   Footer,
+  Cases_number,
 } from './styles';
 
 export function Home(){
   
   const [day, setDay] = useState(0);
+  const [dataCases, setDataCases] = useState<CasesDto[]>([]);
+  const [loadint, setLoading] = useState(true);
 
   function OneLessDay(){
     if (day == 0) {
@@ -22,12 +27,28 @@ export function Home(){
     } setDay(day -1)
   }
 
+  useEffect(() => {
+    async function cases() {
+      try {
+        const response = await api.get('/api/v1/cases');
+        setDataCases(response.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    cases();
+  },[]);
+
   return(
     <Screen>
       <Title>Quantidade de casos de COVID-19 em dias</Title>
       <Body>
         <Days_scores>
-
+          <Cases_number>
+            {dataCases}
+          </Cases_number>
         </Days_scores>
 
         <Quantity_days>
