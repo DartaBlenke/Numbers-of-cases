@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 
 import { Button } from '../../components/Button';
@@ -22,28 +22,30 @@ interface DateProps
 
 export function Home(){
   
-  const [day, setDay] = useState(1);
-  const [dataCases, setDataCases] = useState<DateProps[]>([{day: day, cases: 634}]);
+  const [day, setDay] = useState(0);
+  const [dataCases, setDataCases] = useState<DateProps[]>([]);
 
   function OneLessDay(){
     if (dataCases.length > 0) {
       var data = dataCases;
       data.pop();
       setDataCases(data);
+      setDay(data.length);
     }
   }
   
   function randomNumber() {
-    Math.floor(Math.random() * 1 - 1000);
+    return Math.floor(Math.random() * 1000);
   }
 
   function AddDay(){
     var day = dataCases.length + 1;
-    var cases = 777;
+    var cases = randomNumber();
     var data = dataCases;
     data.push({day, cases});
     setDataCases(data);
-    console.log(dataCases);
+    setDay(day);
+    //console.log(dataCases);
   }
 
   return(
@@ -54,7 +56,7 @@ export function Home(){
           <ScrollView
             showsVerticalScrollIndicator={false}
           >
-            {dataCases.map(dataCase => ( 
+            {dataCases?.map(dataCase => (
               <Cases_number>
                 {dataCase.day} - {dataCase.cases}
               </Cases_number>
@@ -63,7 +65,7 @@ export function Home(){
         </Days_scores>
 
         <Quantity_days>
-         <Days>{dataCases[dataCases.length - 1].day}</Days>
+         <Days>{day}</Days>
         </Quantity_days>
       </Body>
       <Footer>
